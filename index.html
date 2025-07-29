@@ -2,133 +2,278 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>周静怡 - 个人简历</title>
+  <title>周静怡 - 个人主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="周静怡，博士，南京师范大学，研究方向：室内导航、地图设计、空间优化等。">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f8f8f8; margin: 0; padding: 0; }
-    .container { max-width: 900px; margin: 40px auto; background: #fff; box-shadow: 0 2px 8px #eee; padding: 40px 30px; border-radius: 12px; }
-    h1 { font-size: 2.2em; margin-bottom: 6px; color: #295ba7; }
-    h2 { border-left: 5px solid #295ba7; padding-left: 12px; color: #295ba7; margin-top: 32px; }
-    ul { padding-left: 22px; }
-    .base-info, .contact { display: flex; flex-wrap: wrap; gap: 28px 60px; font-size: 1.05em; margin-bottom: 18px; }
-    .contact span { margin-right: 20px; }
-    .section { margin-bottom: 18px; }
-    .item-title { font-weight: bold; color: #1c396b; }
-    .pub-list li, .proj-list li { margin-bottom: 8px; }
-    .small { font-size: 0.95em; color: #666; }
-    a { color: #295ba7; word-break: break-all; }
-    .award-list, .honor-list { columns: 2 350px; }
-    @media (max-width: 650px) {
-      .container { padding: 18px 4px; }
-      .base-info, .contact { flex-direction: column; gap: 8px; }
-      h1 { font-size: 1.3em; }
-      h2 { font-size: 1.1em; }
+    :root {
+      --main-bg: #f7f9fb;
+      --card-bg: #fff;
+      --primary: #295ba7;
+      --accent: #4ec6e0;
+      --text-main: #283546;
+      --text-light: #7b8ba1;
+      --shadow: 0 4px 16px 0 rgba(39,64,94,0.09);
+      --radius: 18px;
+    }
+    body {
+      margin: 0;
+      background: var(--main-bg);
+      font-family: 'Montserrat', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 44px;
+      margin-bottom: 30px;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--card-bg);
+      box-shadow: var(--shadow);
+      background: #dde5ef;
+    }
+    .main-title {
+      font-size: 2.4em;
+      font-weight: 700;
+      margin: 20px 0 8px 0;
+      color: var(--primary);
+      text-shadow: 0 2px 10px rgba(41,91,167,0.03);
+    }
+    .subtitle {
+      color: var(--accent);
+      font-size: 1.25em;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .contact-icons {
+      display: flex;
+      gap: 22px;
+      margin-bottom: 10px;
+      margin-top: 4px;
+    }
+    .contact-icons a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.4em;
+      transition: color 0.2s;
+    }
+    .contact-icons a:hover {
+      color: var(--accent);
+    }
+    .info-tagline {
+      color: var(--text-light);
+      font-size: 1em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+      padding: 0 18px;
+    }
+    .section-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      padding: 32px 30px 20px 30px;
+      transition: box-shadow 0.2s;
+    }
+    .section-card:hover {
+      box-shadow: 0 8px 32px 0 rgba(41,91,167,0.18);
+    }
+    .section-title {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+      border-left: 5px solid var(--accent);
+      padding-left: 12px;
+    }
+    ul,ol { padding-left: 20px; margin: 0 0 12px 0;}
+    li { margin-bottom: 5px;}
+    .meta-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px 40px;
+      font-size: 1em;
+      color: var(--text-light);
+      margin: 12px 0 4px 0;
+      letter-spacing: 0.5px;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0 0 10px 0;
+    }
+    .skill-tag {
+      background: var(--accent);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 22px;
+      font-size: 0.98em;
+      font-weight: 500;
+      box-shadow: 0 2px 7px 0 rgba(78,198,224,0.09);
+    }
+    .award-list, .honor-list { columns: 2 340px; }
+    @media (max-width: 700px) {
+      .container { padding: 0 2vw; }
+      .section-card { padding: 22px 8px 10px 8px;}
+      .award-list, .honor-list { columns: 1; }
+    }
+    @media (max-width: 430px) {
+      .main-title { font-size: 1.35em; }
+      .subtitle { font-size: 1em; }
+      .section-title { font-size: 1em; }
+      .avatar { width: 80px; height: 80px; }
     }
   </style>
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/3f0b4a77f4.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <div class="center">
+    <img class="avatar" src="avatar.jpg" alt="周静怡头像" onerror="this.src='https://avatars.githubusercontent.com/u/9919?s=200&v=4'">
+    <div class="main-title">周静怡</div>
+    <div class="subtitle">博士研究生 · 南京师范大学</div>
+    <div class="info-tagline">
+      室内导航与疏散地图设计 | 导航认知 | 城市应急设施空间优化
+    </div>
+    <div class="meta-list">
+      <div>女</div>
+      <div>1998年5月生</div>
+      <div>江西上饶</div>
+      <div>中共党员</div>
+    </div>
+    <div class="contact-icons">
+      <a href="mailto:zhoujingyi@njnu.edu.cn" title="邮箱"><i class="fa fa-envelope"></i></a>
+      <a href="tel:15390750800" title="电话"><i class="fa fa-phone"></i></a>
+      <!-- <a href="https://github.com/你的GitHub用户名" title="GitHub"><i class="fab fa-github"></i></a> -->
+    </div>
+  </div>
   <div class="container">
-    <h1>周静怡</h1>
-    <div class="base-info">
-      <div>性别：女</div>
-      <div>生日：1998年5月</div>
-      <div>籍贯：江西上饶</div>
-      <div>政治面貌：中共党员</div>
-    </div>
-    <div class="contact">
-      <span>手机：15390750800</span>
-      <span>邮箱：<a href="mailto:zhoujingyi@njnu.edu.cn">zhoujingyi@njnu.edu.cn</a></span>
-    </div>
-    <div class="section">
-      <span class="item-title">研究方向：</span>室内导航与疏散地图设计、导航认知、城市应急设施空间优化等
-    </div>
 
-    <h2>一、教育经历</h2>
-    <ul>
-      <li>2019.09 - 至今：南京师范大学，地理科学学院，硕博连读，目前博士四年级<br>
-        <span class="small">专业: 地图学与地理信息系统；导师: 沈婕教授</span>
-      </li>
-      <li>2023.01 - 2023.12：苏黎世大学，地理信息中心，联合培养（CSC资助）<br>
-        <span class="small">导师: Robert Weibel教授</span>
-      </li>
-      <li>2015.06 - 2019.09：江西师范大学，地理与环境学院，理学学士<br>
-        <span class="small">专业: 地理信息科学</span>
-      </li>
-    </ul>
-
-    <h2>二、科研项目</h2>
-    <ul class="proj-list">
-      <li>2022.05 - 2024.05：江苏省研究生科研创新计划项目（KYCX22_1571），“顾及层次化地标的室内应急导航路径综合模型研究”，1.5万，主持。</li>
-      <li>2025.01 - 2026.12：江苏省卫生健康发展研究中心开放课题（JSHD202407），“自动体外除颤器空间部署的智能优化与可视化方法”，10万，参与，主要参与项目的申报工作、室内AED空间优化与可视化等研究工作。</li>
-      <li>2024.10 - 2026.09：遥感科学国家重点实验室开放基金项目（OFSLRSS202430），“基于深度学习的自动体外除颤器空间布局优化研究”，6万，参与。</li>
-      <li>2024.01 - 2027.12：国家自然科学基金（42371444），“基于自然-社会-记忆耦合关系的灾害叙事地图模型与表达”，49万，参与。</li>
-      <li>2021.10 - 2024.09：国家重点研发计划政府间国际科技创新合作专项（2021YFE0112300），“CIM 与大数据集成的城市灾害管理与应急响应场景认知与构建方法研究”，300万，参与。</li>
-      <li>2019.01 - 2022.12：国家自然科学基金（41871371），“顾及层次化地标约束的室内导航地图综合模型与方法研究”，58万，参与。</li>
-      <li>2017.04 - 2019.12：国家重点研发计划政府间国际科技创新合作专项（2016YFE0131600），“大数据背景下面向风险与灾害管理的动态制图方法研究”，132万，参与。</li>
-    </ul>
-
-    <h2>三、学术协会</h2>
-    <ul>
-      <li>2023.08 - 至今，国际地图制图学会灾害与早期预警制图专业委员会委员</li>
-      <li>2023.11 - 至今，国际地图制图学会地理信息可视化认知问题专业委员会委员</li>
-    </ul>
-
-    <h2>四、研究成果</h2>
-    <div class="section">
-      <span class="item-title">（1）期刊论文</span>
-      <ul class="pub-list">
-        <li>Yang, F., Shen, J.*, Wang, S, Zhang, M., Zhou, J.*, Wang J. Scenario-Based Simulation and Emergency Path Planning Dealing with Infectious Disease Spread in Indoor environment Based on the Rubik's Cube. <i>Applied Geography</i>. SCI 2区 在投</li>
-        <li>Zhou, J., Shen, J., Fu, C., Weibel, R., & Zhou, Z. (2025). Quantifying indoor navigation map information considering the dynamic map elements for scale adaptation. <i>International Journal of Applied Earth Observation and Geoinformation</i>, 136, 104323. SCI 1区Top</li>
-        <li>Zhou, J., Yang, H., Shen. J.*, & Zhu, L. (2024). Indoor navigation map design base on the spatial complexity. <i>Cartography and Geography Information Science</i>, 1-13. SSCI & SCI 3区</li>
-        <li>刘晓艳, 田兆炜, 周静怡*, 赵天浩, 徐颖, 徐家鹏, 沈婕. 河道健康管理本体模型构建与数据存储方法设计[J]. 同济大学学报 (自然科学版), 2023, 51(7): 1018-1024. EI</li>
-        <li>Zhu, L., Shen, J. *, Zhou, J., Stachoň, Z., Hong, S., & Wang, X. (2021). Personalized landmark adaptive visualization method for pedestrian navigation maps: Considering user familiarity, <i>Transactions in GIS</i>, 26(2), 669-690. SSCI & SCI 3区</li>
-        <li>Zhou, J., Shen, J. *, Zang, K., Shi, X., Du, Y., & Šilhák, P. (2020). Spatio-temporal visualization method for urban waterlogging warning based on dynamic grading. <i>ISPRS International Journal of Geo-Information</i>, 9(8), 471. SCI 3区</li>
-        <li>Shen, J., Zhou, J. *, Zhou, J., Herman, L., & Reznik, T. (2020). Constructing the CityGML ADE for the Multi-Source Data Integration of Urban Flooding. <i>ISPRS International Journal of Geo-Information</i>, 9(6), 359. SCI 3区</li>
-        <li>周静怡, 胡碧松*, 邱文清. 基于腾讯位置数据的南昌市活动空间凝聚结构与区划研究[J].世界地理研究, 2020, 29(05): 973-984. CSSCI</li>
-      </ul>
-    </div>
-    <div class="section">
-      <span class="item-title">（2）会议论文</span>
-      <ul class="pub-list">
-        <li>Zhou, J., Weibel, R., Fu, C., Zhou, Z., Zhu, L., & Shen, J. (2023). Enhancing indoor spatial knowledge through navigation map design with landmark hierarchy. 18th International Conference on Location Based Services.</li>
-        <li>Zhou, J., Weibel, R., Fu, C., Zhou, Z., Zhu, L., & Shen, J. (2023). Indoor navigation map design based on the analysis of space characteristics. Abstracts of the ICA, 6, 291.</li>
-        <li>Zhou, J., Shen, J.*, Zhu, L., Yan, X. & Sun, W. (2022). Preliminary study of indoor emergency path planning based on fire emergency knowledge graph. 17th International Conference on Location Based Services.</li>
-        <li>Shen, J.*, Zhou, J., & Yang, J. (2021). Preliminary study on knowledge graph construction based on the coupling mechanism of urban disaster and emergency response. Abstracts of the ICA, 3.</li>
-        <li>Zhou, J., Shen, J. *, Shi, J., & Zhu, L. (2021). Indoor navigation path visualization method considering the spatial characteristics. 16th International Conference on Location Based Services (p. 19).</li>
-        <li>Zhu, L., Shen, J. *, Zhou, W., & Zhou, J. (2020). Preliminary study on ontology construction for hospital navigation. 8th International Conference on Cartography and GIS.</li>
-      </ul>
-    </div>
-    <div class="section">
-      <span class="item-title">（3）专利</span>
+    <div class="section-card">
+      <div class="section-title">教育经历</div>
       <ul>
-        <li>周静怡, 沈婕, 武稳苍, 徐颖. 基于二维视域分析的室内疏散平面图的安装位置选择方法, 申请号：202410799222.8</li>
-        <li>沈婕, 朱利涛, 周静怡, 侯盈旭, 石家凤, 陈亚伟. 一种面向医院室内导航的本体构建方法，申请日：2019-12-20, 授权日：2022-11-18, 专利号：ZL 201911325337.9</li>
+        <li><b>南京师范大学 地理科学学院</b> · 硕博连读（博士四年级）<br>
+          <span class="skills">
+            <span class="skill-tag">地图学与地理信息系统</span>
+          </span>
+          2019.09 - 至今，导师：沈婕教授
+        </li>
+        <li><b>苏黎世大学 地理信息中心</b> · 联合培养（CSC资助）<br>
+          <span class="skills">
+            <span class="skill-tag">联合导师: Robert Weibel教授</span>
+          </span>
+          2023.01 - 2023.12
+        </li>
+        <li><b>江西师范大学 地理与环境学院</b> · 理学学士<br>
+          <span class="skills">
+            <span class="skill-tag">地理信息科学</span>
+          </span>
+          2015.06 - 2019.09
+        </li>
       </ul>
     </div>
 
-    <h2>五、会议报告</h2>
-    <ul>
-      <li>Installation Location Selection for Indoor Evacuation Plan based on Visibility Graph Analysis, The First Asian Cartographic Conference, Hong Kong, China, 2023.12.10. 线下口头报告</li>
-      <li>Enhancing indoor spatial knowledge through navigation map design with landmark hierarchy, 18th International Conference on Location Based Services, Gent, Belgium, 2023.11.21. 线下口头报告</li>
-      <li>Indoor navigation map design based on the analysis of space characteristics, The 31st International Cartographic Conference, Cape Town, South Africa, 2023.08.15. 线下口头报告</li>
-      <li>Cartography and AI (MapAI) Workshop, Stellenbosch, South Africa, 2023.08.12. 线下参与</li>
-      <li>Eye Tracking Studies in Indoor map elements, Winter School Eye Tracking – Experiment Design, Implementation and Analysis, Monte Verita, Switzerland, 2023.01.08-01.13. 线下口头报告与培训</li>
-      <li>面向医院室内导航的本体构建方法，第十届地理信息科学博士生学术论坛，2022.12.18. 线上口头报告</li>
-      <li>Indoor navigation path visualization method considering the spatial characteristic, 16th International Conference on Location Based Services, 2021.11.24. 线上口头报告</li>
-    </ul>
+    <div class="section-card">
+      <div class="section-title">科研项目</div>
+      <ul>
+        <li><b>江苏省研究生科研创新计划项目</b>（KYCX22_1571），主持，2022.05-2024.05<br>
+          “顾及层次化地标的室内应急导航路径综合模型研究”，1.5万
+        </li>
+        <li><b>江苏省卫生健康发展研究中心开放课题</b>（JSHD202407），参与，2025.01-2026.12<br>
+          “自动体外除颤器空间部署的智能优化与可视化方法”，10万
+        </li>
+        <li><b>遥感科学国家重点实验室开放基金项目</b>（OFSLRSS202430），参与，2024.10-2026.09<br>
+          “基于深度学习的自动体外除颤器空间布局优化研究”，6万
+        </li>
+        <li><b>国家自然科学基金</b>（42371444），参与，2024.01-2027.12<br>
+          “基于自然-社会-记忆耦合关系的灾害叙事地图模型与表达”，49万
+        </li>
+        <li><b>国家重点研发计划政府间国际科技创新合作专项</b>（2021YFE0112300），参与，2021.10-2024.09<br>
+          “CIM与大数据集成的城市灾害管理与应急响应场景认知与构建方法研究”，300万
+        </li>
+        <li><b>国家自然科学基金</b>（41871371），参与，2019.01-2022.12<br>
+          “顾及层次化地标约束的室内导航地图综合模型与方法研究”，58万
+        </li>
+        <li><b>国家重点研发计划政府间国际科技创新合作专项</b>（2016YFE0131600），参与，2017.04-2019.12<br>
+          “大数据背景下面向风险与灾害管理的动态制图方法研究”，132万
+        </li>
+      </ul>
+    </div>
 
-    <h2>六、获奖和荣誉情况</h2>
-    <div class="section">
-      <span class="item-title">（1）获奖情况</span>
+    <div class="section-card">
+      <div class="section-title">学术协会</div>
+      <ul>
+        <li>2023.08 - 至今，国际地图制图学会灾害与早期预警制图专业委员会委员</li>
+        <li>2023.11 - 至今，国际地图制图学会地理信息可视化认知问题专业委员会委员</li>
+      </ul>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">研究成果</div>
+      <b>期刊论文：</b>
+      <ul>
+        <li>Yang, F., Shen, J.*, Wang, S, Zhang, M., Zhou, J.*, Wang J. <i>Applied Geography</i>. SCI 2区 在投</li>
+        <li>Zhou, J., Shen, J., Fu, C., Weibel, R., & Zhou, Z. (2025). <i>International Journal of Applied Earth Observation and Geoinformation</i>, 136, 104323. SCI 1区Top</li>
+        <li>Zhou, J., Yang, H., Shen. J.*, & Zhu, L. (2024). <i>Cartography and Geography Information Science</i>, 1-13. SSCI & SCI 3区</li>
+        <li>刘晓艳, 田兆炜, 周静怡*, 等. 同济大学学报 (自然科学版), 2023, 51(7): 1018-1024. EI</li>
+        <li>Zhu, L., Shen, J. *, Zhou, J., 等. <i>Transactions in GIS</i>, 26(2), 669-690. SSCI & SCI 3区</li>
+        <li>Zhou, J., Shen, J. *, Zang, K., 等. <i>ISPRS International Journal of Geo-Information</i>, 9(8), 471. SCI 3区</li>
+        <li>Shen, J., Zhou, J. *, Zhou, J., 等. <i>ISPRS International Journal of Geo-Information</i>, 9(6), 359. SCI 3区</li>
+        <li>周静怡, 胡碧松*, 邱文清. 世界地理研究, 2020, 29(05): 973-984. CSSCI</li>
+      </ul>
+      <b>会议论文：</b>
+      <ul>
+        <li>Zhou, J., Weibel, R., Fu, C., 等. 18th International Conference on Location Based Services, 2023</li>
+        <li>Zhou, J., Weibel, R., Fu, C., 等. Abstracts of the ICA, 6, 291, 2023</li>
+        <li>Zhou, J., Shen, J.*, Zhu, L., 等. 17th International Conference on Location Based Services, 2022</li>
+        <li>Shen, J.*, Zhou, J., Yang, J. Abstracts of the ICA, 3, 2021</li>
+        <li>Zhou, J., Shen, J. *, Shi, J., 等. 16th International Conference on Location Based Services, 2021</li>
+        <li>Zhu, L., Shen, J. *, Zhou, W., & Zhou, J. 8th International Conference on Cartography and GIS, 2020</li>
+      </ul>
+      <b>专利：</b>
+      <ul>
+        <li>周静怡, 沈婕, 武稳苍, 徐颖. 申请号：202410799222.8</li>
+        <li>沈婕, 朱利涛, 周静怡, 等. 专利号：ZL 201911325337.9</li>
+      </ul>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">会议报告</div>
+      <ul>
+        <li>Installation Location Selection for Indoor Evacuation Plan based on Visibility Graph Analysis, The First Asian Cartographic Conference, 香港, 2023.12.10. 线下口头报告</li>
+        <li>Enhancing indoor spatial knowledge through navigation map design with landmark hierarchy, 18th International Conference on Location Based Services, 比利时, 2023.11.21. 线下口头报告</li>
+        <li>Indoor navigation map design based on the analysis of space characteristics, The 31st International Cartographic Conference, 南非, 2023.08.15. 线下口头报告</li>
+        <li>Cartography and AI (MapAI) Workshop, 南非, 2023.08.12. 线下参与</li>
+        <li>Eye Tracking Studies in Indoor map elements, Winter School Eye Tracking, 瑞士, 2023.01.08-01.13. 线下口头报告与培训</li>
+        <li>面向医院室内导航的本体构建方法，第十届地理信息科学博士生学术论坛，2022.12.18. 线上口头报告</li>
+        <li>Indoor navigation path visualization method considering the spatial characteristic, 16th International Conference on Location Based Services, 线上口头报告, 2021.11.24.</li>
+      </ul>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">获奖与荣誉</div>
+      <b>获奖：</b>
       <ul class="award-list">
-        <li>2018年12月，第七届全国大学生GIS应用技能大赛，二等奖</li>
-        <li>2018年11月，ESRI杯中国大学生GIS软件开发竞赛地理设计组，优胜奖</li>
-        <li>2017年12月，第六届全国大学生GIS应用技能大赛，三等奖</li>
+        <li>2018.12，第七届全国大学生GIS应用技能大赛二等奖</li>
+        <li>2018.11，ESRI杯中国大学生GIS软件开发竞赛优胜奖</li>
+        <li>2017.12，第六届全国大学生GIS应用技能大赛三等奖</li>
         <li>第八届全国大学生数学竞赛（非数学类）二等奖</li>
       </ul>
-    </div>
-    <div class="section">
-      <span class="item-title">（2）荣誉情况</span>
+      <b>荣誉：</b>
       <ul class="honor-list">
         <li>2024.12，ICA scholarship</li>
         <li>2023.11，LBS2023 travel grant</li>
@@ -145,16 +290,27 @@
       </ul>
     </div>
 
-    <h2>七、个人能力情况</h2>
-    <div class="section">
-      <span class="item-title">（1）团队协作能力：</span>
-      自加入南京师范大学地理科学学院沈婕教授课题组中，在科研项目方面：作为主要人员，协助参与4项科研项目申请工作，国家重点研发计划项目1项（2021YFE0112300），国家自然科学基金1项（42371444），江苏省卫生健康发展研究中心开放课题1项（JSHD202407），遥感科学国家重点实验室开放基金项目1项（OFSLRSS202430）；协助参与3项科研项目结题报告，包括国家重点研发计划项目2项（2021YFE0112300，2016YFE0131600），国家自然科学基金1项（41871371）。在课程教学方面：作为助教，指导本科生《地图学》、《地图设计与实践》等课程实习内容（ArcGIS地图矢量化、CorelDraw基本操作）。
+    <div class="section-card">
+      <div class="section-title">个人能力</div>
+      <b>团队协作：</b>
+      <div style="margin-bottom:8px;">
+        作为主要成员协助多项科研项目申请及结题，带领或参与本科生实习课程指导。
+      </div>
+      <b>计算机技能：</b>
+      <div class="skills">
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">C#</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">ArcGIS</span>
+        <span class="skill-tag">CorelDraw</span>
+        <span class="skill-tag">SketchUp</span>
+        <span class="skill-tag">Depthmap</span>
+        <span class="skill-tag">SPSS</span>
+      </div>
     </div>
-    <div class="section">
-      <span class="item-title">（2）计算机能力：</span>
-      编程语言：掌握R、Python、C#、JavaScript、SQL等。<br>
-      软件工具：掌握ArcGIS、CorelDraw、SketchUp、Depthmap、SPSS等。
-    </div>
+
   </div>
 </body>
 </html>
